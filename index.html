@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&family=Roboto:wght@100&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    :root {
+      --highlight-color: #D1884F;
+      --blue: #008aaa;
+      --light-blue: #3bbadb
+    }
+
+    .item1 {
+      grid-area: header;
+    }
+
+    .item2 {
+      grid-area: left;
+    }
+
+    .item3 {
+      grid-area: left;
+    }
+
+    .item4 {
+      grid-area: right;
+    }
+
+    .item5 {
+      grid-area: button1;
+    }
+
+    .item6 {
+      grid-area: button2;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        '  header header header'
+        'left left right'
+        'button1 button2 button2';
+      gap: 0;
+      padding: 10px 50px;
+      grid-template-columns: 15% 35% 50%;
+    }
+
+    .grid-container header {
+      font-weight: 300;
+      font-size: 20px;
+      color: var(--light-blue);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins';
+    }
+
+    .topnav.item1 {
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      margin: 30px 0 60px;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 15px;
+    }
+
+    .topnav a i {
+      font-size: 1em;
+    }
+
+    .topnav a.active {
+      color: var(--highlight-color);
+    }
+
+    .topnav .fa-fw {
+      width: 2.25em;
+    }
+
+    h2 {
+      font-size: 201%;
+      max-width: 91%;
+    }
+
+    p {
+      font-size: 98%;
+      font-weight: 500;
+    }
+
+    h2 span {
+      color: var(--highlight-color);
+    }
+
+    .item4 img {
+      height: 297px;
+      width: 215px;
+      border-radius: 0 0 0 50%;
+      box-shadow: var(--light-blue) -28px 7px 0px -7px;
+      ;
+      float: right;
+      max-width: 90%;
+
+    }
+
+    #more {
+      display: none;
+    }
+
+    .see-more {
+      color: var(--light-blue);
+      font-weight: 300;
+    }
+
+    .item5 .hire-me {
+      border: none;
+      background-color: var(--blue);
+      border-radius: 5px;
+      font-size: 1.8vw;
+      padding: 5px 15px;
+      color: white;
+      font-weight: 200;
+      margin-right: 3%;
+      box-shadow: 0px 3px 8px var(--light-blue);
+
+    }
+
+    .item6 .see-my-project {
+      border: solid .5px var(--light-blue);
+      font-size: 1.8vw;
+      padding: 5px 15px;
+      color: var(--light-blue);
+      border-radius: 5px;
+      background: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .grid-container {
+        grid-template-areas:
+          'header'
+          'left'
+          'right'
+          'button1'
+          'button2';
+        gap: 20px;
+        padding: 10px 30px;
+        grid-template-columns: 100%;
+        justify-items: center;
+        margin-bottom: 13px;
+      }
+
+      .grid-container div {
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 5vw;
+        max-width: unset;
+      }
+
+      p {
+        font-size: 2.5vw;
+      }
+
+      .item4 {
+        padding-left: 23px;
+      }
+
+      .item4 img {
+        float: unset;
+        max-width: 83%;
+      }
+
+      .topnav {
+        width: 100%;
+      }
+
+      .item5 .hire-me,
+      .item6 .see-my-project {
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="grid-container">
+    <nav class="item1 topnav">
+      <a class="active"><i class="fa-solid fa-home fa-sm fa-fw "></i> Home</a>
+      <a> <i class="fa-solid fa-user fa-sm  fa-fw"></i>About</a>
+      <a> <i class="fa-solid fa-phone fa-sm fa-fw"></i>Contact Me</a>
+    </nav>
+    <div class="item2">
+      <article>
+        <header>Welcome to my site</header>
+        <h2>Hi , I'm Lina, a Full Stack <span>Developer.</span></h2>
+        <p>
+          I have over 5 years of experience in software development, worked on several projects
+          with global companies like Cepres, IQVIA and others.
+          I am focused on .net environment. I have experience with React.js and Angular front end environments.
+          I have a Bsc in computer engineering from NNU, graduated on 2017.
+          <span id="more">
+            I also have experince in other techniques like javascript, html, css, sql, mssql server
+            and many other skills that helps me create professional web applications from scratch.
+
+          </span>
+          <a onclick="seeMore()" id="myBtn" class="see-more">See more</a>
+
+        </p>
+      </article>
+    </div>
+    <div class="item4">
+      <img src="./Capture.png">
+    </div>
+    <div class="item5">
+      <button class="hire-me">Hire Me !</button>
+
+    </div>
+    <div class="item6">
+      <button class="see-my-project">See My Project</button>
+
+    </div>
+
+  </div>
+  <script src="https://kit.fontawesome.com/9a9879858f.js" crossorigin="anonymous"></script>
+  <script>
+
+    function seeMore() {
+      var btnText = document.getElementById("myBtn");
+      if (moreText.style.display == "none") {
+        moreText.style.display = "inline";
+        btnText.innerHTML = "See less";
+      } else {
+        moreText.style.display = "none";
+        btnText.innerHTML = "See more";
+      }
+    }
+    
+  </script>
+  </div>
+</body>
+
+</html>
