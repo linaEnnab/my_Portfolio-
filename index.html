@@ -220,7 +220,6 @@
 
           </span>
           <a onclick="seeMore()" id="myBtn" class="see-more">See more</a>
-
         </p>
       </article>
     </div>
@@ -239,7 +238,8 @@
   </div>
   <script src="https://kit.fontawesome.com/9a9879858f.js" crossorigin="anonymous"></script>
   <script>
-
+    var moreText = document.getElementById("more");
+    moreText.style.display = "none";
     function seeMore() {
       var btnText = document.getElementById("myBtn");
       if (moreText.style.display == "none") {
